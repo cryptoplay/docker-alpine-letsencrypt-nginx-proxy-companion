@@ -1,6 +1,5 @@
-FROM alpine:3.3
-
-MAINTAINER Yves Blusseau <90z7oey02@sneakemail.com> (@blusseau)
+FROM cryptoplay/alpine:3.6
+MAINTAINER CryptoPlay <docker@cryptoplay.tk>
 
 ENV DEBUG=false              \
 	DOCKER_GEN_VERSION=0.7.3 \
