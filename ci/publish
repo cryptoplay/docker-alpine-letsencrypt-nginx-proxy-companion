@@ -1,0 +1,13 @@
+#!/bin/bash
+
+. ci/vars
+docker login -u ${user} -p ${pass}
+#docker login -u $DOCKER_USER -p $DOCKER_PASS
+docker tag cryptoplay/alpine-letsencrypt-nginx-proxy-companion cryptoplay/alpine-letsencrypt-nginx-proxy-companion:${TAG}
+docker tag cryptoplay/alpine-letsencrypt-nginx-proxy-companion cryptoplay/alpine-letsencrypt-nginx-proxy-companion:0.2.0
+docker push cryptoplay/alpine-letsencrypt-nginx-proxy-companion:${TAG}
+docker push cryptoplay/alpine-letsencrypt-nginx-proxy-companion:0.2.0
+docker push cryptoplay/alpine-letsencrypt-nginx-proxy-companion:latest
+docker logout
+
+#curl -X POST 'https://hooks.microbadger.com/images/cryptoplay/alpine-letsencrypt-nginx-proxy-companion/uwPTYMegv8MxPqs1S9e_DzwaxoM='
